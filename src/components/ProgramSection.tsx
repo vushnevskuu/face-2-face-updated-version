@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckCircle } from 'lucide-react';
 
 const programParts = [
@@ -74,50 +74,58 @@ const programParts = [
   }
 ];
 
-const ProgramSection = () => {
+const ProgramSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) => void }) => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-10 md:py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-black mb-4">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-4xl font-bold text-black dark:text-white mb-4">
             Программа вебинара
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             Подробный план мероприятия с практическими заданиями
           </p>
         </div>
 
-        <div className="space-y-8">
-          {programParts.map((part, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg p-8 relative overflow-hidden">
-              {/* Geometric accent */}
-              <div className={`absolute top-0 left-0 w-2 h-full ${index % 2 === 0 ? 'bg-blue-600' : 'bg-green-600'}`}></div>
-              
-              <div className="pl-6">
-                <h3 className="text-2xl font-bold text-black mb-6">
-                  Часть {index + 1}. {part.title}
-                </h3>
-                
-                <ul className="space-y-3">
-                  {part.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start">
-                      <CheckCircle className={`w-5 h-5 mr-3 mt-0.5 flex-shrink-0 ${index % 2 === 0 ? 'text-blue-600' : 'text-green-600'}`} />
-                      <span className="text-gray-700 leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+        <div className="space-y-4">
+          {programParts.map((part, index) => {
+            const [open, setOpen] = useState(false);
+            const accentColor = index % 2 === 0 ? 'blue' : 'green';
+            return (
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+                <div className={`absolute top-0 left-0 w-2 h-full ${accentColor === 'blue' ? 'bg-blue-600' : 'bg-green-600'}`}></div>
+                <button
+                  type="button"
+                  onClick={() => setOpen(!open)}
+                  className="w-full text-left p-6 pl-8 flex items-center justify-between"
+                >
+                  <span className="text-2xl font-bold text-black dark:text-white">Часть {index + 1}. {part.title}</span>
+                  <span className="ml-4 text-gray-500 group-hover:text-gray-700">{open ? '−' : '+'}</span>
+                </button>
+                {open && (
+                  <div className="px-6 pb-6 pl-8">
+                    <ul className="space-y-3">
+                      {part.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start">
+                          <CheckCircle className={`w-5 h-5 mr-3 mt-0.5 flex-shrink-0 ${accentColor === 'blue' ? 'text-blue-600' : 'text-green-600'}`} />
+                          <span className="text-gray-700 dark:text-gray-300 leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button onClick={(e) => onRegisterClick?.(e.currentTarget)} className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
             Присоединиться бесплатно
           </button>
           
-          <div className="mt-6">
-            <p className="text-lg font-semibold text-black">
+          <div className="mt-4">
+            <p className="text-[16px] font-normal text-black dark:text-white">
               Бонус: гайд + видео вебинара
             </p>
           </div>

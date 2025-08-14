@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-gray-900 text-white py-8 dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="142" height="28" fill="none" viewBox="0 0 131 26" className="w-[100px] h-[20px] mx-auto mb-4" alt="Лого">

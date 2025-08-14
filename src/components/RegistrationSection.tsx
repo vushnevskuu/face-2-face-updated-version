@@ -29,9 +29,9 @@ const RegistrationSection = () => {
   };
 
   return (
-    <section className="py-20 bg-black text-white">
+    <section className="py-10 md:py-20 bg-black text-white dark:bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <h2 className="text-4xl font-bold mb-4">
             Регистрация на вебинар
           </h2>
@@ -40,11 +40,11 @@ const RegistrationSection = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 text-black">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-black dark:text-gray-100">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   <User className="w-4 h-4 inline mr-2" />
                   ФИО *
                 </label>
@@ -54,13 +54,13 @@ const RegistrationSection = () => {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                   placeholder="Введите ваше полное имя"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   <Building className="w-4 h-4 inline mr-2" />
                   Наименование компании *
                 </label>
@@ -70,13 +70,13 @@ const RegistrationSection = () => {
                   value={formData.company}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                   placeholder="Название вашей компании"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   <Briefcase className="w-4 h-4 inline mr-2" />
                   Должность *
                 </label>
@@ -86,13 +86,13 @@ const RegistrationSection = () => {
                   value={formData.position}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                   placeholder="Ваша должность"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   <Phone className="w-4 h-4 inline mr-2" />
                   Телефон *
                 </label>
@@ -102,14 +102,14 @@ const RegistrationSection = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                   placeholder="+7 (999) 123-45-67"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                 <Mail className="w-4 h-4 inline mr-2" />
                 Email *
               </label>
@@ -119,7 +119,7 @@ const RegistrationSection = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                 placeholder="your@email.com"
               />
             </div>
@@ -134,7 +134,7 @@ const RegistrationSection = () => {
                   required
                   className="mt-1 mr-3 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600"
                 />
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-gray-600 dark:text-gray-300">
                   Я согласен с{' '}
                   <a href="#" className="text-blue-600 hover:underline">
                     политикой конфиденциальности
@@ -152,7 +152,7 @@ const RegistrationSection = () => {
                   required
                   className="mt-1 mr-3 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600"
                 />
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-gray-600 dark:text-gray-300">
                   Я даю согласие на обработку персональных данных *
                 </span>
               </label>
