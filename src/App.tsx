@@ -7,14 +7,12 @@ import SpeakersSection from './components/SpeakersSection';
 import ProgramSection from './components/ProgramSection';
 import RegistrationSection from './components/RegistrationSection';
 import Footer from './components/Footer';
-import ConferenceArticle from './components/ConferenceArticle';
 
 function App() {
   const topRef = useRef<HTMLDivElement | null>(null);
   const formRef = useRef<HTMLDivElement | null>(null);
   const [showBackHint, setShowBackHint] = useState(false);
   const [backTarget, setBackTarget] = useState<HTMLElement | null>(null);
-  const [showArticle, setShowArticle] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,10 +49,6 @@ function App() {
     document.documentElement.classList.toggle('dark', isDark);
   }, [isDark]);
 
-  if (showArticle) {
-    return <ConferenceArticle />;
-  }
-
   return (
     <div className={"min-h-screen "+(isDark? 'bg-gray-950 text-gray-100':'')} ref={topRef}>
       <Header />
@@ -66,16 +60,6 @@ function App() {
         <RegistrationSection />
       </div>
       <Footer />
-
-      {/* Article toggle button */}
-      <div className="fixed right-6 top-20 z-[900]">
-        <button
-          onClick={() => setShowArticle(true)}
-          className="px-4 py-2 rounded-full border border-gray-300 bg-white/90 dark:bg-gray-800 dark:border-gray-700 shadow-md text-sm text-gray-800 dark:text-gray-100"
-        >
-          Читать статью
-        </button>
-      </div>
 
       {/* Theme toggle floating in footer area */}
       <div className="fixed left-6 bottom-6 z-[900]">
