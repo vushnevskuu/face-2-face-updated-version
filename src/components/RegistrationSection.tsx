@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { User, Building, Briefcase, Phone, Mail } from 'lucide-react';
+import { User, Phone, Mail } from 'lucide-react';
 
 const RegistrationSection = () => {
   const [formData, setFormData] = useState({
     fullName: '',
-    company: '',
-    position: '',
     phone: '',
     email: '',
     privacyConsent: false,
@@ -59,37 +57,7 @@ const RegistrationSection = () => {
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
-                  <Building className="w-4 h-4 inline mr-2" />
-                  Наименование компании *
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-                  placeholder="Название вашей компании"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
-                  <Briefcase className="w-4 h-4 inline mr-2" />
-                  Должность *
-                </label>
-                <input
-                  type="text"
-                  name="position"
-                  value={formData.position}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
-                  placeholder="Ваша должность"
-                />
-              </div>
+              
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">

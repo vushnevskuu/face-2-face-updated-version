@@ -1,5 +1,4 @@
 import React from 'react';
-import { Calendar, Clock, Monitor } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
 
 const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) => void }) => {
@@ -18,26 +17,8 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
               Выстройте эффективные бизнес-процессы в компании<br /> с помощью проверенных психологических инструментов
             </p>
 
-            {/* Event details */}
-            {/* Вариант 1 (оригинальный) оставлен ниже; для включения таймера используйте компонент ниже */}
-            {/* <div className="bg-gray-50 rounded-2xl p-6 mb-8 w-full"> ... </div> */}
+            {/* Таймер до события */}
             <CountdownTimer targetISO="2025-09-16T16:00:00Z" />
-            <div className="bg-gray-50 rounded-2xl p-6 mb-8 w-full hidden">
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <Calendar className="w-5 h-5 mr-3 text-blue-600" />
-                  <span className="text-gray-900 font-medium">15 февраля 2024, 19:00 МСК</span>
-                </div>
-                <div className="flex items-center">
-                  <Monitor className="w-5 h-5 mr-3 text-green-600" />
-                  <span className="text-gray-900 font-medium">Онлайн-формат</span>
-                </div>
-                <div className="flex items-center">
-                  <Clock className="w-5 h-5 mr-3 text-blue-600" />
-                  <span className="text-gray-900 font-medium">Длительность: 2 часа</span>
-                </div>
-              </div>
-            </div>
 
             <div className="relative inline-block">
               <button onClick={(e) => onRegisterClick?.(e.currentTarget)} className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg relative z-10">

@@ -11,7 +11,7 @@ const Footer = () => {
           </svg>
           
           <div className="text-gray-400 text-sm">
-            © 2024 Face2Face. Все права защищены.
+            © 2025 Face2Face. Все права защищены.
           </div>
         </div>
       </div>
