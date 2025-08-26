@@ -49,7 +49,6 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
       ) : (
         <>
           <div className="text-center text-gray-600 dark:text-gray-300 mb-4">{title}</div>
-          <div className="text-center text-sm text-gray-500 dark:text-gray-400 mb-3">Старт: {startInMoscow} МСК</div>
           <div className="grid grid-cols-4 gap-3 text-center">
             <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-sm">
               <div className="text-3xl font-bold text-black dark:text-white">{pad(days)}</div>
@@ -68,6 +67,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
               <div className="text-xs text-gray-500 dark:text-gray-400">секунд</div>
             </div>
           </div>
+          <div className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">Старт: {startInMoscow} МСК</div>
         </>
       )}
     </div>
