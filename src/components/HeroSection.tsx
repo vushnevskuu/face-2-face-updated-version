@@ -30,14 +30,22 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
             </div>
           </div>
 
-          {/* Right side - Group photo */}
+          {/* Right side - Group photo with translucent base and geometric accents */}
           <div className="relative order-1 lg:order-1 mx-auto">
-            <div className="rounded-2xl overflow-hidden shadow-lg bg-black">
-              <img
-                src="/images/speakers-group.png"
-                alt="Спикеры вебинара"
-                className="w-full h-full object-cover"
-              />
+            {/* geometric accents */}
+            <div className="absolute -top-6 -left-8 w-40 h-40 bg-blue-600 rounded-full opacity-20 blur-xl z-0"></div>
+            <div className="absolute -bottom-10 -right-10 w-56 h-56 bg-green-600 rounded-full opacity-20 blur-xl z-0"></div>
+            <div className="absolute top-1/2 -left-8 w-10 h-10 bg-blue-600 rotate-45 opacity-30 z-0"></div>
+
+            {/* translucent base */}
+            <div className="relative z-10 rounded-3xl p-2 bg-white/30 dark:bg-white/10 backdrop-blur-sm shadow-xl">
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src="/images/speakers-group.png"
+                  alt="Спикеры вебинара"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
