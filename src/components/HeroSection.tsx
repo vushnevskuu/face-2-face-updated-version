@@ -30,42 +30,15 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
             </div>
           </div>
 
-          {/* Right side - Speaker photos (on top on mobile) */}
-          <div className="relative order-1 lg:order-1 lg:origin-top-left lg:scale-[0.833] mx-auto">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="relative z-10 transition-transform duration-300 lg:hover:-translate-y-1 cursor-pointer">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src="/images/alexey-nazarov.jpg"
-                    alt="Алексей Назаров"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 bg-white rounded-lg shadow-lg p-3 z-20 hidden lg:block">
-                  <h3 className="font-bold text-black text-sm">Алексей Назаров</h3>
-                  <p className="text-xs text-gray-600">Основатель Face2Face</p>
-                </div>
-              </div>
-              
-              <div className="relative mt-8 z-10 transition-transform duration-300 lg:hover:-translate-y-1 cursor-pointer">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src="/images/natalya-paloma.jpg"
-                    alt="Наталья Палома"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-4 left-4 right-4 bg-white rounded-lg shadow-lg p-3 z-20 hidden lg:block">
-                  <h3 className="font-bold text-black text-sm">Наталья Палома</h3>
-                  <p className="text-xs text-gray-600">Магистр психологии</p>
-                </div>
-              </div>
+          {/* Right side - Group photo */}
+          <div className="relative order-1 lg:order-1 mx-auto">
+            <div className="rounded-2xl overflow-hidden shadow-lg bg-black">
+              <img
+                src="/images/speakers-group.jpg"
+                alt="Спикеры вебинара"
+                className="w-full h-full object-cover"
+              />
             </div>
-
-            {/* Geometric elements */}
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-blue-600 rounded-full opacity-20 z-0"></div>
-            <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-green-600 rounded-full opacity-20 z-0"></div>
-            <div className="absolute top-1/2 -right-8 w-8 h-8 bg-blue-600 transform rotate-45 opacity-30 z-0"></div>
           </div>
         </div>
       </div>
