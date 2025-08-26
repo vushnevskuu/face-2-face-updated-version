@@ -34,7 +34,7 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
           <div className="relative order-1 lg:order-1 mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-lg bg-black">
               <img
-                src="/images/speakers-group.jpg"
+                src="/images/speakers-group.png"
                 alt="Спикеры вебинара"
                 className="w-full h-full object-cover"
               />
