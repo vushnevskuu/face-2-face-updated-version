@@ -43,7 +43,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
   const isPast = targetDate - now <= 0;
 
   return (
-    <div className="bg-green-50 dark:bg-green-900/30 rounded-2xl p-6 mb-8 w-full">
+    <div className="bg-green-50 dark:bg-green-900 rounded-2xl p-6 mb-8 w-full">
       {isPast ? (
         <div className="text-center text-gray-700 font-medium">Вебинар уже состоялся</div>
       ) : (
