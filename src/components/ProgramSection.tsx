@@ -98,7 +98,7 @@ const ProgramSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElemen
           
           <div className="mt-4">
             <p className="text-[16px] font-normal text-black dark:text-white">
-              Бонус: гайд + видео вебинара
+              Бонус: инструкция, как упаковать свои знания и умения в востребованные форматы + видео вебинара
             </p>
           </div>
         </div>
