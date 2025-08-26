@@ -9,9 +9,8 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
           {/* Left side - Content (below on mobile) */}
           <div className="order-2 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h1 className="text-[36px] lg:text-[44px] font-bold text-black dark:text-white mb-6 leading-[1.1]">
-              <span className="block">Бизнес-психология:</span>
-              <span className="block">как использовать лайфхаки</span>
-              <span className="block">из психологии для бизнеса</span>
+              <span className="block">Как эксперту построить личный бренд и монетизировать знания.</span>
+              <span className="block">Практические лайфхаки 2025</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-[1.3]">
               Выстройте эффективные бизнес-процессы в компании<br /> с помощью проверенных психологических инструментов
