@@ -17,9 +17,6 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
               Практически лайфхаки 2025
             </p>
 
-            {/* Таймер до события */}
-            <CountdownTimer targetISO="2025-09-16T16:00:00Z" />
-
             <div className="relative inline-block">
               <button onClick={(e) => onRegisterClick?.(e.currentTarget)} className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg relative z-10">
                 Зарегистрироваться
@@ -30,7 +27,7 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
             </div>
           </div>
 
-          {/* Right side - Group photo with translucent base and geometric accents */}
+          {/* Right side - Group photo with geometric accents and timer below */}
           <div className="relative order-1 lg:order-1 mx-auto">
             {/* geometric accents */}
             <div className="absolute -top-6 -left-8 w-40 h-40 bg-blue-600 rounded-full opacity-20 blur-xl z-0"></div>
@@ -44,6 +41,11 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
                 alt="Спикеры вебинара"
                 className="w-full h-full object-cover"
               />
+            </div>
+
+            {/* Timer under the photo */}
+            <div className="mt-6 relative z-10">
+              <CountdownTimer targetISO="2025-09-16T16:00:00Z" />
             </div>
           </div>
         </div>
