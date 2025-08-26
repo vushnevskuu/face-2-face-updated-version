@@ -44,7 +44,7 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
             </div>
 
             {/* Timer slightly overlapping the photo */}
-            <div className="relative z-20 -mt-6 md:-mt-8">
+            <div className="relative z-20 -mt-3 md:-mt-5">
               <CountdownTimer targetISO="2025-09-16T16:00:00Z" />
             </div>
           </div>
