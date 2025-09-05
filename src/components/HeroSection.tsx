@@ -5,7 +5,7 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
   return (
     <section className="relative bg-white dark:bg-gray-950 py-10 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-11 items-center">
           {/* Left side - Content (below on mobile) */}
           <div className="order-2 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h1 className="text-[36px] lg:text-[44px] font-bold text-black dark:text-white mb-6 leading-[1.1]">
@@ -37,9 +37,9 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
             {/* image without translucent base */}
             <div className="relative z-10">
               <img
-                src="/images/speakers-group.png"
-                alt="Спикеры вебинара"
-                className="w-full h-full object-cover"
+                src={`${import.meta.env.BASE_URL}images/triof2f.png`}
+                alt="Трио Face2Face"
+                className="w-full h-auto object-contain"
               />
             </div>
 

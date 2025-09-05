@@ -1,21 +1,28 @@
-import React from 'react';
+ 
 
 const speakers = [
   {
     name: "Наталья Палома",
-    image: "/images/natalya-paloma.jpg",
+    image: "images/natalya-paloma.jpg",
     bio: "Магистр психологии, University of East London («Прикладная психология и коучинг»), Магистр психологии, РПУ св. Иоанна Богослова - Центр системной семейной терапии, ICEEFT (Эмоционально-Фокусированная терапия), Besser-Siegmund-Institut (wingwave-коучинг), программы по стресс-менеджменту и экзистенциальной терапии, регулярно учавствует в международных обучающих программах и конференциях, модератор бизнес-сообществ (Клуб Первых, Лидеры России, СберУниверситет, А1, Эквиум и др.).",
     tags: ["Личный бренд", "Психология", "Коучинг", "Стратегия", "Саморазвитие"]
   },
   {
     name: "Алексей Назаров",
-    image: "/images/alexey-nazarov.jpg",
+    image: "images/alexey-nazarov.jpg",
     bio: "Основатель сервиса видеоконсультаций Face2Face.ru. Его профессиональный опыт включает работу в ведущих российских операторах связи, включая: NetByNet, ТрансТелеКом, МГТС. Являлся Генеральным директором крупнейшего российского видеохостинга Rutube, руководил увеличением аудитории платформы и её технологической модернизацией. Сегодня Алексей Назаров является основателем сервиса Face2Face, демонстрируя своё стремление развивать инновационные проекты и создавать полезные продукты для общества. Спикер активно участвует в формировании цифровой экономики России, стремясь повышать качество предоставляемых услуг и улучшать взаимодействие между людьми и технологиями.",
     tags: ["Менеджмент", "Продажи", "Стратегия", "Технологии"]
   },
   {
     name: "Пётр Липов",
-    image: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&fit=crop",
+    image: "images/Petr-Lipov.jpg?v=2",
+    fallbacks: [
+      "images/Petr–Lipov.jpg",
+      "/images/Petr-Lipov.jpg",
+      "/images/Petr–Lipov.jpg",
+      "images/petr-lipov.jpg",
+      "images/Petr-Lipov.JPG"
+    ],
     bio: "Хэдхантер, практик executive search, карьерный консультант, коуч. Его профессиональная карьера стартовала в крупнейших российских корпорациях — Объединённая двигателестроительная корпорация (ОДК), ПАО «Ростелеком», ПАО «Газпром нефть». Получив богатый опыт в управлении проектами и взаимодействии с международными партнёрами, с 2009 года перешёл в сферу консалтинга, специализируясь на подборе топ-менеджеров. Провёл более 200 успешных подборов ключевых специалистов, гарантируя полное соответствие требованиям компаний-клиентов. Помимо консалтинговой практики, успешно занимается преподавательской деятельностью в престижных вузах страны — ИМИСП, РАНХиГС, ЛЭТИ, ИТМО, а также сотрудничает с молодёжной организацией AIESEC. Обладает глубокими компетенциями в различных отраслях экономики: ритейле, FMCG, телекоме, IT, банковской сфере, финтехе, электронной коммерции, нефтегазовом секторе и тяжёлой промышленности. Имеет международный сертификат профессионального коуча (ICF, ECF, австралийская ассоциация коучинга), реализовал более 3000 часов индивидуальных сессий и консультирований для развития лидеров бизнеса.",
     tags: ["HR", "Headhunter", "Личный бренд", "Карьера"]
   }
@@ -41,9 +48,19 @@ const SpeakersSection = () => {
                 <div className="flex flex-col items-center md:items-start w-full md:w-40">
                   <div className="aspect-[3/4] rounded-xl overflow-hidden w-36 md:w-full">
                     <img
-                      src={speaker.image}
+                      src={`${import.meta.env.BASE_URL}${(speaker as any).image}`}
                       alt={speaker.name}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const img = e.currentTarget as HTMLImageElement & { dataset: DOMStringMap };
+                        const variants = (speaker as any).fallbacks as string[] | undefined;
+                        const index = Number(img.dataset.variantIndex || '0');
+                        if (Array.isArray(variants) && index < variants.length) {
+                          const next = variants[index];
+                          img.src = next.startsWith('/') ? next : `${import.meta.env.BASE_URL}${next}`;
+                          img.dataset.variantIndex = String(index + 1);
+                        }
+                      }}
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-black mt-4 text-center md:hidden">{speaker.name}</h3>
