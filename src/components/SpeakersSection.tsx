@@ -48,7 +48,7 @@ const SpeakersSection = () => {
                 <div className="flex flex-col items-center md:items-start w-full md:w-40">
                   <div className="aspect-[3/4] rounded-xl overflow-hidden w-36 md:w-full">
                     <img
-                      src={`${import.meta.env.BASE_URL}${(speaker as any).image}`}
+                      src={`/${(speaker as any).image}`}
                       alt={speaker.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -57,7 +57,7 @@ const SpeakersSection = () => {
                         const index = Number(img.dataset.variantIndex || '0');
                         if (Array.isArray(variants) && index < variants.length) {
                           const next = variants[index];
-                          img.src = next.startsWith('/') ? next : `${import.meta.env.BASE_URL}${next}`;
+                          img.src = next.startsWith('/') ? next : `/${next}`;
                           img.dataset.variantIndex = String(index + 1);
                         }
                       }}

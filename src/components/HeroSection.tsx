@@ -37,7 +37,7 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
             {/* image without translucent base */}
             <div className="relative z-10">
               <img
-                src={`${import.meta.env.BASE_URL}images/triof2f.png`}
+                src="/images/triof2f.png"
                 alt="Трио Face2Face"
                 className="w-full h-auto object-contain"
               />
