@@ -37,6 +37,7 @@ const RegistrationSection = () => {
   };
 
   return (
+    <>
     <section className="py-10 md:py-20 bg-black text-white dark:bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-16">
@@ -201,6 +202,7 @@ const RegistrationSection = () => {
         </div>
       </div>
     )}
+    </>
   );
 };
 
