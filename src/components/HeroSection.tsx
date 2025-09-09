@@ -8,12 +8,12 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-11 items-center">
           {/* Left side - Content (top on mobile) */}
           <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h1 className="text-[32px] lg:text-[44px] font-bold text-black dark:text-white mb-6 leading-[1.1]">
+            <h1 className="text-[28px] lg:text-[44px] font-bold text-black dark:text-white mb-6 leading-[1.1]">
               <span className="block">Как эксперту</span>
               <span className="block">построить личный бренд</span>
               <span className="block">и монетизировать знания</span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-8 leading-[1.3]">
+            <p className="text-[18px] md:text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-8 leading-[1.3]">
               Практические лайфхаки 2025
             </p>
 

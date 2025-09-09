@@ -69,7 +69,7 @@ const RegistrationSection = () => {
     <section className="py-8 md:py-20 bg-black text-white dark:bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-[32px] md:text-4xl font-bold mb-4">
+          <h2 className="text-[28px] md:text-4xl font-bold mb-4">
             Регистрация на вебинар
           </h2>
           <p className="text-xl text-gray-300">
