@@ -180,17 +180,17 @@ const RegistrationSection = () => {
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <h3 className="text-[22px] md:text-3xl font-bold leading-tight text-black dark:text-white mb-4">
-              Подтвердите регистрацию, чтобы получить ссылку на трансляцию
+              Подтвердите регистрацию, чтобы получить ссылку на{'\u00A0'}трансляцию
             </h3>
 
             {/* hint about mail folders - moved above green text */}
             <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-4">
-              <p>Проверьте письмо‑подтверждение в папке «Спам», «Промоакции» или «Оповещения».</p>
+              <p>Проверьте письмо‑подтверждение в{'\u00A0'}папке «Спам», «Промоакции» или «Оповещения».</p>
             </div>
 
             <p className="text-[20px] md:text-[22px] font-normal text-green-500 mb-4 leading-snug">
               Не нашли письмо?
-              <br />Подключайтесь к нашему боту в Telegram — он пришлёт ссылку и запись вебинара.
+              <br />Подключайтесь к нашему боту в{'\u00A0'}Telegram — он пришлёт ссылку и{'\u00A0'}запись вебинара.
             </p>
 
             <div className="flex flex-col items-center gap-3 mb-4">
@@ -207,7 +207,7 @@ const RegistrationSection = () => {
             
 
             <p className="text-sm text-gray-600 dark:text-gray-300">
-              Если письмо так и не пришло — напишите в поддержку:
+              Если письмо так{'\u00A0'}и{'\u00A0'}не пришло — напишите в{'\u00A0'}поддержку:
               <br />
               <a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                 https://t.me/
