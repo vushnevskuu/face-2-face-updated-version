@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Phone, Mail } from 'lucide-react';
+import { User, Phone, Mail, CheckCircle2, X } from 'lucide-react';
 
 const RegistrationSection = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,9 @@ const RegistrationSection = () => {
     privacyConsent: false,
     dataProcessingConsent: false
   });
+
+  const [showThanks, setShowThanks] = useState(false);
+  const TELEGRAM_URL = 'https://t.me/face2face';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -22,8 +25,15 @@ const RegistrationSection = () => {
     e.preventDefault();
     // Here would be the registration logic
     console.log('Registration data:', formData);
-    // Redirect to thank you page with Telegram channel
-    alert('Спасибо за регистрацию! Переходите в наш Telegram канал для получения дополнительных материалов.');
+    // Reset and show thank-you modal
+    setFormData({
+      fullName: '',
+      phone: '',
+      email: '',
+      privacyConsent: false,
+      dataProcessingConsent: false
+    });
+    setShowThanks(true);
   };
 
   return (
@@ -142,6 +152,55 @@ const RegistrationSection = () => {
         </div>
       </div>
     </section>
+    
+    {/* Thank you modal */}
+    {showThanks && (
+      <div
+        className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+        onClick={() => setShowThanks(false)}
+        aria-modal
+        role="dialog"
+      >
+        <div
+          className="relative w-full max-w-md rounded-2xl bg-white dark:bg-gray-900 shadow-xl ring-1 ring-black/5 dark:ring-white/10"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            aria-label="Закрыть"
+            className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+            onClick={() => setShowThanks(false)}
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          <div className="px-6 pt-8 pb-6 text-center">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-green-600 text-white">
+              <CheckCircle2 className="w-8 h-8" />
+            </div>
+            <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Спасибо за регистрацию!</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              Присоединяйтесь к нашему Telegram-каналу, чтобы получить материалы и ссылку на вебинар.
+            </p>
+            <div className="flex flex-col gap-3">
+              <a
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-green-600 px-6 py-3 font-semibold text-white shadow-md hover:from-blue-700 hover:to-green-700 transition-colors"
+              >
+                Перейти в Telegram
+              </a>
+              <button
+                className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
+                onClick={() => setShowThanks(false)}
+              >
+                Закрыть
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
   );
 };
 
