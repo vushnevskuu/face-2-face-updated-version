@@ -8,7 +8,7 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-11 items-center">
           {/* Left side - Content (top on mobile) */}
           <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h1 className="text-[36px] lg:text-[44px] font-bold text-black dark:text-white mb-6 leading-[1.1]">
+            <h1 className="text-[32px] lg:text-[44px] font-bold text-black dark:text-white mb-6 leading-[1.1]">
               <span className="block">Как эксперту</span>
               <span className="block">построить личный бренд</span>
               <span className="block">и монетизировать знания</span>

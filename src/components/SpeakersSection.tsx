@@ -33,7 +33,7 @@ const SpeakersSection = () => {
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-black dark:text-white mb-4">
+          <h2 className="text-[32px] md:text-4xl font-bold text-black dark:text-white mb-4">
             Спикеры вебинара
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300">
@@ -66,7 +66,7 @@ const SpeakersSection = () => {
                   <h3 className="text-2xl font-bold text-black mt-4 text-center md:hidden">{speaker.name}</h3>
                 </div>
                 <div className="flex-1">
-                  <h3 className="hidden md:block text-3xl font-bold text-black dark:text-white mb-2">{speaker.name}</h3>
+                  <h3 className="hidden md:block text-[32px] md:text-3xl font-bold text-black dark:text-white mb-2">{speaker.name}</h3>
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-left md:text-left">{speaker.bio}</p>
                 </div>
               </div>
