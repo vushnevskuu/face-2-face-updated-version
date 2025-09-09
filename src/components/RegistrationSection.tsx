@@ -193,7 +193,8 @@ const RegistrationSection = () => {
             </div>
 
             <p className="text-[20px] md:text-[22px] font-normal text-green-500 mb-4 leading-snug">
-              Чтобы не потерять ссылку, подключите Telegram‑бота. Он пришлёт доступ и{'\u00A0'}запись.
+              Чтобы не потерять ссылку, подключите Telegram‑бота.
+              <br />Он пришлёт доступ и{'\u00A0'}запись.
             </p>
 
             <div className="flex flex-col items-center gap-3 mb-4">
