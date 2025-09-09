@@ -12,6 +12,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      VITE_WEB3FORMS_TOKEN: ${{ secrets.WEB3FORMS_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
