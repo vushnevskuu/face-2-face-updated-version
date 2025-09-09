@@ -22,46 +22,17 @@ const RegistrationSection = () => {
     }));
   };
 
-  const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    setSubmitError(null);
-
-    try {
-      const form = new FormData();
-      form.append('access_key', import.meta.env.VITE_WEB3FORMS_TOKEN || '');
-      form.append('name', formData.fullName);
-      form.append('phone', formData.phone);
-      form.append('email', formData.email);
-      form.append('subject', 'Регистрация на вебинар (face2face)');
-      form.append('from_name', 'Face2Face');
-
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: form
-      });
-
-      const json = await res.json();
-      if (!json.success) {
-        throw new Error(json.message || 'Не удалось отправить форму');
-      }
-
-      setFormData({
-        fullName: '',
-        phone: '',
-        email: '',
-        privacyConsent: false,
-        dataProcessingConsent: false
-      });
-      setShowThanks(true);
-    } catch (err: any) {
-      setSubmitError(err?.message || 'Произошла ошибка при отправке');
-    } finally {
-      setSubmitting(false);
-    }
+    // Интеграции отправки пока нет; показываем модалку и очищаем форму
+    setFormData({
+      fullName: '',
+      phone: '',
+      email: '',
+      privacyConsent: false,
+      dataProcessingConsent: false
+    });
+    setShowThanks(true);
   };
 
   return (
@@ -173,9 +144,7 @@ const RegistrationSection = () => {
               {submitting ? 'Отправка…' : 'Зарегистрироваться бесплатно'}
             </button>
 
-            {submitError && (
-              <p className="text-sm text-red-600 dark:text-red-400">{submitError}</p>
-            )}
+            {/* Ошибки отправки отсутствуют в текущей интеграции */}
           </form>
         </div>
 
