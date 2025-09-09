@@ -185,7 +185,11 @@ const RegistrationSection = () => {
 
             {/* hint about mail folders - moved above green text */}
             <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-4">
-              <p>Не видите письмо? Загляните в{'\u00A0'}«Спам», «Промоакции» или{'\u00A0'}«Оповещения».</p>
+              <p>
+                Не видите письмо?
+                <br />
+                Загляните в{'\u00A0'}«Спам», «Промоакции» или{'\u00A0'}«Оповещения».
+              </p>
             </div>
 
             <p className="text-[20px] md:text-[22px] font-normal text-green-500 mb-4 leading-snug">
@@ -206,7 +210,8 @@ const RegistrationSection = () => {
             
 
             <p className="text-sm text-gray-600 dark:text-gray-300">
-              Если письма всё{'\u00A0'}ещё нет — напишите нам: 
+              Если письма всё{'\u00A0'}ещё нет — напишите нам:
+              <br />
               <a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">t.me</a>
             </p>
 
