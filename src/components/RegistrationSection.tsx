@@ -63,6 +63,8 @@ const RegistrationSection = () => {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   required
+                  onInvalid={(e)=> e.currentTarget.setCustomValidity('Пожалуйста, укажите ваше полное имя')}
+                  onInput={(e)=> e.currentTarget.setCustomValidity('')}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                   placeholder="Введите ваше полное имя"
                 />
@@ -81,6 +83,8 @@ const RegistrationSection = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
+                  onInvalid={(e)=> e.currentTarget.setCustomValidity('Пожалуйста, укажите номер телефона')}
+                  onInput={(e)=> e.currentTarget.setCustomValidity('')}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                   placeholder="+7 (999) 123-45-67"
                 />
@@ -98,6 +102,8 @@ const RegistrationSection = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
+                onInvalid={(e)=> e.currentTarget.setCustomValidity('Пожалуйста, введите корректный email')}
+                onInput={(e)=> e.currentTarget.setCustomValidity('')}
                 className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
                 placeholder="your@email.com"
               />
@@ -111,6 +117,8 @@ const RegistrationSection = () => {
                   checked={formData.privacyConsent}
                   onChange={handleInputChange}
                   required
+                  onInvalid={(e)=> (e.currentTarget as HTMLInputElement).setCustomValidity('Необходимо согласие с политикой конфиденциальности')}
+                  onInput={(e)=> (e.currentTarget as HTMLInputElement).setCustomValidity('')}
                   className="mt-1 mr-3 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600"
                 />
                 <span className="text-sm text-gray-600 dark:text-gray-300">
@@ -129,6 +137,8 @@ const RegistrationSection = () => {
                   checked={formData.dataProcessingConsent}
                   onChange={handleInputChange}
                   required
+                  onInvalid={(e)=> (e.currentTarget as HTMLInputElement).setCustomValidity('Необходимо согласие на обработку персональных данных')}
+                  onInput={(e)=> (e.currentTarget as HTMLInputElement).setCustomValidity('')}
                   className="mt-1 mr-3 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600"
                 />
                 <span className="text-sm text-gray-600 dark:text-gray-300">
