@@ -43,31 +43,31 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
   const isPast = targetDate - now <= 0;
 
   return (
-    <div className="bg-green-50 dark:bg-green-900 rounded-2xl p-6 mb-8 w-full">
+    <div className="bg-green-50 dark:bg-green-900 rounded-2xl p-4 md:p-6 mb-6 md:mb-8 w-full">
       {isPast ? (
         <div className="text-center text-gray-700 font-medium">Вебинар уже состоялся</div>
       ) : (
         <>
           <div className="text-center text-gray-600 dark:text-gray-300 mb-4">{title}</div>
-          <div className="grid grid-cols-4 gap-3 text-center">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-sm">
-              <div className="text-3xl font-bold text-black dark:text-white">{pad(days)}</div>
+          <div className="grid grid-cols-4 gap-2 md:gap-3 text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-2 md:p-3 shadow-sm">
+              <div className="text-2xl md:text-3xl font-bold text-black dark:text-white">{pad(days)}</div>
               <div className="text-xs text-gray-500 dark:text-gray-400">дней</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-sm">
-              <div className="text-3xl font-bold text-black dark:text-white">{pad(hours)}</div>
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-2 md:p-3 shadow-sm">
+              <div className="text-2xl md:text-3xl font-bold text-black dark:text-white">{pad(hours)}</div>
               <div className="text-xs text-gray-500 dark:text-gray-400">часов</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-sm">
-              <div className="text-3xl font-bold text-black dark:text-white">{pad(minutes)}</div>
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-2 md:p-3 shadow-sm">
+              <div className="text-2xl md:text-3xl font-bold text-black dark:text-white">{pad(minutes)}</div>
               <div className="text-xs text-gray-500 dark:text-gray-400">минут</div>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-3 shadow-sm">
-              <div className="text-3xl font-bold text-black dark:text-white">{pad(seconds)}</div>
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-2 md:p-3 shadow-sm">
+              <div className="text-2xl md:text-3xl font-bold text-black dark:text-white">{pad(seconds)}</div>
               <div className="text-xs text-gray-500 dark:text-gray-400">секунд</div>
             </div>
           </div>
-          <div className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">Старт: {startInMoscow} МСК</div>
+          <div className="text-center text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-3 md:mt-4">Старт: {startInMoscow} МСК</div>
         </>
       )}
     </div>

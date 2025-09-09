@@ -6,18 +6,18 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
     <section className="relative bg-white dark:bg-gray-950 py-10 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-11 items-center">
-          {/* Left side - Content (below on mobile) */}
-          <div className="order-2 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+          {/* Left side - Content (top on mobile) */}
+          <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h1 className="text-[36px] lg:text-[44px] font-bold text-black dark:text-white mb-6 leading-[1.1]">
               <span className="block">Как эксперту</span>
               <span className="block">построить личный бренд</span>
               <span className="block">и монетизировать знания</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-[1.3]">
-              Практически лайфхаки 2025
+              Практические лайфхаки 2025
             </p>
 
-            <div className="relative inline-block">
+            <div className="relative inline-block hidden lg:inline-block">
               <button onClick={(e) => onRegisterClick?.(e.currentTarget)} className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg relative z-10">
                 Зарегистрироваться
               </button>
@@ -28,7 +28,7 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
           </div>
 
           {/* Right side - Group photo with geometric accents and timer below */}
-          <div className="relative order-1 lg:order-1 mx-auto">
+          <div className="relative order-2 lg:order-1 mx-auto">
             {/* geometric accents */}
             <div className="absolute -top-6 -left-8 w-40 h-40 bg-blue-600 rounded-full opacity-20 blur-xl z-0"></div>
             <div className="absolute -bottom-10 -right-10 w-56 h-56 bg-green-600 rounded-full opacity-20 blur-xl z-0"></div>
@@ -37,15 +37,22 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
             {/* image without translucent base */}
             <div className="relative z-10">
               <img
-                src="/images/triof2f.png"
+                src={`${import.meta.env.BASE_URL}images/triof2f.png`}
                 alt="Трио Face2Face"
                 className="w-full h-auto object-contain"
               />
             </div>
 
             {/* Timer slightly overlapping the photo */}
-            <div className="relative z-20 -mt-3 md:-mt-5">
+            <div className="relative z-20 -mt-3 md:-mt-5 scale-90 md:scale-100 origin-top">
               <CountdownTimer targetISO="2025-09-16T16:00:00Z" />
+            </div>
+
+            {/* Mobile CTA under timer */}
+            <div className="block lg:hidden text-center mt-4">
+              <button onClick={(e) => onRegisterClick?.(e.currentTarget)} className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Зарегистрироваться
+              </button>
             </div>
           </div>
         </div>
