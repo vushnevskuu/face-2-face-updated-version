@@ -55,7 +55,7 @@ const ProgramSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElemen
             Программа вебинара
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Подробный план мероприятия с практическими заданиями
+            Подробный план мероприятия <br className="md:hidden" />с практическими заданиями
           </p>
         </div>
 

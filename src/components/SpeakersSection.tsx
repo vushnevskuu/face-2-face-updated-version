@@ -37,7 +37,7 @@ const SpeakersSection = () => {
             Спикеры вебинара
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Эксперты с многолетним опытом в психологии и бизнесе
+            Эксперты <br className="md:hidden" />с многолетним опытом <br className="md:hidden" />в психологии и бизнесе
           </p>
         </div>
 
