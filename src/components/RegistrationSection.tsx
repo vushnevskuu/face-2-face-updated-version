@@ -66,7 +66,7 @@ const RegistrationSection = () => {
 
   return (
     <>
-    <section className="py-10 md:py-20 bg-black text-white dark:bg-black">
+    <section className="py-8 md:py-20 bg-black text-white dark:bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-[32px] md:text-4xl font-bold mb-4">
@@ -77,9 +77,9 @@ const RegistrationSection = () => {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-black dark:text-gray-100">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 text-black dark:text-gray-100">
+          <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   <User className="w-4 h-4 inline mr-2" />
@@ -131,7 +131,7 @@ const RegistrationSection = () => {
               />
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               <label className="flex items-start">
                 <input
                   type="checkbox"

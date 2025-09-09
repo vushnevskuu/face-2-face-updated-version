@@ -30,9 +30,9 @@ const speakers = [
 
 const SpeakersSection = () => {
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-12 md:py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <h2 className="text-[32px] md:text-4xl font-bold text-black dark:text-white mb-4">
             Спикеры вебинара
           </h2>
@@ -41,12 +41,12 @@ const SpeakersSection = () => {
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           {speakers.map((speaker, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm ring-1 ring-black/5 dark:ring-white/10 p-6">
-              <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] items-start gap-6">
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm ring-1 ring-black/5 dark:ring-white/10 p-5 md:p-6">
+              <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] items-start gap-4 md:gap-6">
                 <div className="flex flex-col items-center md:items-start w-full md:w-40">
-                  <div className="aspect-[3/4] rounded-xl overflow-hidden w-36 md:w-full">
+                  <div className="aspect-[3/4] rounded-xl overflow-hidden w-32 md:w-full">
                     <img
                       src={`/${(speaker as any).image}`}
                       alt={speaker.name}
@@ -71,7 +71,7 @@ const SpeakersSection = () => {
                 </div>
               </div>
               {speaker.tags && (
-                <div className="mt-4 w-full border-t border-gray-200 dark:border-white/10 pt-4 flex flex-wrap gap-3">
+                <div className="mt-4 w-full border-t border-gray-200 dark:border-white/10 pt-4 flex flex-wrap gap-2 md:gap-3">
                   {speaker.tags.map((tag) => (
                     <span
                       key={tag}

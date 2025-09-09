@@ -3,9 +3,9 @@ import CountdownTimer from './CountdownTimer';
 
 const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) => void }) => {
   return (
-    <section className="relative bg-white dark:bg-gray-950 py-10 lg:py-24">
+    <section className="relative bg-white dark:bg-gray-950 py-8 md:py-10 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-11 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-11 items-center">
           {/* Left side - Content (top on mobile) */}
           <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h1 className="text-[32px] lg:text-[44px] font-bold text-black dark:text-white mb-6 leading-[1.1]">
@@ -13,7 +13,7 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
               <span className="block">построить личный бренд</span>
               <span className="block">и монетизировать знания</span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-[1.3]">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-8 leading-[1.3]">
               Практические лайфхаки 2025
             </p>
 
@@ -44,12 +44,12 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
             </div>
 
             {/* Timer slightly overlapping the photo */}
-            <div className="relative z-20 -mt-3 md:-mt-5 scale-90 md:scale-100 origin-top">
+            <div className="relative z-20 -mt-2 md:-mt-5 scale-90 md:scale-100 origin-top">
               <CountdownTimer targetISO="2025-09-16T16:00:00Z" />
             </div>
 
             {/* Mobile CTA under timer */}
-            <div className="block lg:hidden text-center mt-4">
+            <div className="block lg:hidden text-center mt-3">
               <button onClick={(e) => onRegisterClick?.(e.currentTarget)} className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Зарегистрироваться
               </button>

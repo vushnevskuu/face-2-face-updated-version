@@ -36,15 +36,15 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section className="py-10 md:py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-8 md:py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-16">
+        <div className="text-center mb-6 md:mb-16">
           <h2 className="text-[32px] md:text-4xl font-bold text-black dark:text-white mb-4">
             На вебинаре узнаете:
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             const colorClasses = benefit.color === 'blue' 
@@ -52,15 +52,15 @@ const BenefitsSection = () => {
               : 'bg-green-600 text-white';
             
             return (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
                 {/* Geometric accent */}
                 <div className={`absolute top-0 right-0 w-16 h-16 ${benefit.color === 'blue' ? 'bg-blue-600' : 'bg-green-600'} opacity-10 rounded-bl-full`}></div>
                 
-                <div className={`w-16 h-16 rounded-2xl ${colorClasses} flex items-center justify-center mb-6`}>
+                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl ${colorClasses} flex items-center justify-center mb-5 md:mb-6`}>
                   <IconComponent className="w-8 h-8" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-black dark:text-white mb-4">
+                <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-3 md:mb-4">
                   {benefit.title}
                 </h3>
                 
