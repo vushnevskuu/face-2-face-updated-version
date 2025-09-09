@@ -13,6 +13,7 @@ const RegistrationSection = () => {
   const [showThanks, setShowThanks] = useState(false);
   const TELEGRAM_BOT_URL = 'https://t.me/face2face';
   const SUPPORT_URL = 'https://t.me/';
+  const submitting = false; // отправка через SendPulse-виджет не выполняется из формы
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
