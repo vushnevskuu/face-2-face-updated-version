@@ -12,7 +12,7 @@ const RegistrationSection = () => {
 
   const [showThanks, setShowThanks] = useState(false);
   const TELEGRAM_BOT_URL = 'https://t.me/face2face';
-  const SUPPORT_URL = 'https://t.me/Galakurdova';
+  const SUPPORT_URL = 'https://t.me/';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -184,7 +184,12 @@ const RegistrationSection = () => {
               чтобы получить ссылку на трансляцию
             </h3>
 
-            <p className="text-[20px] md:text-[22px] font-bold text-green-500 mb-4 leading-snug">
+            {/* hint about mail folders - moved above green text */}
+            <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-4">
+              <p>Если не получили письмо, проверьте папки: Спам, Промоакции, Оповещения.</p>
+            </div>
+
+            <p className="text-[20px] md:text-[22px] font-normal text-green-500 mb-4 leading-snug">
               Подписывайтесь на бота в Telegram, который
               отправит ссылки и записи вебинаров:
             </p>
@@ -200,10 +205,7 @@ const RegistrationSection = () => {
               </a>
             </div>
 
-            <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-3">
-              <p>Если не получили письмо, проверьте папки: Спам, Промоакции, Оповещения.</p>
-              <p>Иногда письма не доходят на корпоративные почты.</p>
-            </div>
+            
 
             <p className="text-sm text-gray-600 dark:text-gray-300">
               Если что‑то не пришло — пишите в поддержку
@@ -213,14 +215,7 @@ const RegistrationSection = () => {
               </a>
             </p>
 
-            <div className="mt-4">
-              <button
-                className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white"
-                onClick={() => setShowThanks(false)}
-              >
-                Закрыть
-              </button>
-            </div>
+            
           </div>
         </div>
       </div>
