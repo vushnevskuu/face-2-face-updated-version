@@ -11,7 +11,8 @@ const RegistrationSection = () => {
   });
 
   const [showThanks, setShowThanks] = useState(false);
-  const TELEGRAM_URL = 'https://t.me/face2face';
+  const TELEGRAM_BOT_URL = 'https://t.me/face2face';
+  const SUPPORT_URL = 'https://t.me/Galakurdova';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -178,21 +179,43 @@ const RegistrationSection = () => {
             <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-green-600 text-white">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Спасибо за регистрацию!</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Присоединяйтесь к нашему Telegram-каналу, чтобы получить материалы и ссылку на вебинар.
+            <h3 className="text-[22px] md:text-3xl font-bold leading-tight text-black dark:text-white mb-4">
+              Проверьте письмо‑подтверждение регистрации в спаме,<br />
+              чтобы получить ссылку на трансляцию
+            </h3>
+
+            <p className="text-[20px] md:text-[22px] font-bold text-green-500 mb-4 leading-snug">
+              Подписывайтесь на бота в Telegram, который
+              отправит ссылки и записи вебинаров:
             </p>
-            <div className="flex flex-col gap-3">
+
+            <div className="flex flex-col items-center gap-3 mb-4">
               <a
-                href={TELEGRAM_URL}
+                href={TELEGRAM_BOT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-green-600 px-6 py-3 font-semibold text-white shadow-md hover:from-blue-700 hover:to-green-700 transition-colors"
               >
-                Перейти в Telegram
+                Подписаться на бота
               </a>
+            </div>
+
+            <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-3">
+              <p>Если не получили письмо, проверьте папки: Спам, Промоакции, Оповещения.</p>
+              <p>Иногда письма не доходят на корпоративные почты.</p>
+            </div>
+
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              Если что‑то не пришло — пишите в поддержку
+              {' '}
+              <a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                (https://t.me/Galakurdova)
+              </a>
+            </p>
+
+            <div className="mt-4">
               <button
-                className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
+                className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white"
                 onClick={() => setShowThanks(false)}
               >
                 Закрыть
