@@ -189,8 +189,7 @@ const RegistrationSection = () => {
             </div>
 
             <p className="text-[20px] md:text-[22px] font-normal text-green-500 mb-4 leading-snug">
-              Не нашли письмо?
-              <br />Подключайтесь к нашему боту в{'\u00A0'}Telegram — он пришлёт ссылку и{'\u00A0'}запись вебинара.
+              А чтобы ничего не потерять — подключитесь к нашему боту в{'\u00A0'}Telegram. Он пришлёт ссылку и{'\u00A0'}запись вебинара напрямую.
             </p>
 
             <div className="flex flex-col items-center gap-3 mb-4">
@@ -200,7 +199,7 @@ const RegistrationSection = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-green-600 px-6 py-3 font-semibold text-white shadow-md hover:from-blue-700 hover:to-green-700 transition-colors"
               >
-                Подписаться на бота
+                Получить ссылку в{'\u00A0'}Telegram
               </a>
             </div>
 
