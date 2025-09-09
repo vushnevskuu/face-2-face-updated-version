@@ -180,16 +180,16 @@ const RegistrationSection = () => {
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <h3 className="text-[22px] md:text-3xl font-bold leading-tight text-black dark:text-white mb-4">
-              Подтвердите регистрацию, чтобы получить ссылку на{'\u00A0'}трансляцию
+              Подтвердите регистрацию — получите ссылку на{'\u00A0'}трансляцию
             </h3>
 
             {/* hint about mail folders - moved above green text */}
             <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-4">
-              <p>Проверьте письмо‑подтверждение в{'\u00A0'}папке «Спам», «Промоакции» или «Оповещения».</p>
+              <p>Не видите письмо? Загляните в{'\u00A0'}«Спам», «Промоакции» или{'\u00A0'}«Оповещения».</p>
             </div>
 
             <p className="text-[20px] md:text-[22px] font-normal text-green-500 mb-4 leading-snug">
-              А чтобы ничего не потерять — подключитесь к нашему боту в{'\u00A0'}Telegram. Он пришлёт ссылку и{'\u00A0'}запись вебинара напрямую.
+              Чтобы не потерять ссылку, подключите Telegram‑бота. Он пришлёт доступ и{'\u00A0'}запись.
             </p>
 
             <div className="flex flex-col items-center gap-3 mb-4">
@@ -206,11 +206,8 @@ const RegistrationSection = () => {
             
 
             <p className="text-sm text-gray-600 dark:text-gray-300">
-              Если письмо так{'\u00A0'}и{'\u00A0'}не пришло — напишите в{'\u00A0'}поддержку:
-              <br />
-              <a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                https://t.me/
-              </a>
+              Если письма всё{'\u00A0'}ещё нет — напишите нам: 
+              <a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">t.me</a>
             </p>
 
             
