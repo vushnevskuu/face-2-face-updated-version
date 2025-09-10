@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { User, Phone, Mail, CheckCircle2, X } from 'lucide-react';
+import { User, Phone, Mail, CheckCircle2, X, Building, Briefcase } from 'lucide-react';
 
 const RegistrationSection = () => {
   const [formData, setFormData] = useState({
     fullName: '',
+    company: '',
+    position: '',
     phone: '',
     email: '',
     privacyConsent: false,
@@ -11,9 +13,11 @@ const RegistrationSection = () => {
   });
 
   const [showThanks, setShowThanks] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  
   const TELEGRAM_BOT_URL = 'https://t.me/face2face';
   const SUPPORT_URL = 'https://t.me/';
-  const submitting = false; // отправка через SendPulse-виджет не выполняется из формы
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -23,17 +27,61 @@ const RegistrationSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Интеграции отправки пока нет; показываем модалку и очищаем форму
-    setFormData({
-      fullName: '',
-      phone: '',
-      email: '',
-      privacyConsent: false,
-      dataProcessingConsent: false
-    });
-    setShowThanks(true);
+    setSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_TOKEN || 'YOUR_TOKEN_HERE',
+          subject: 'Регистрация на вебинар Face2Face',
+          from_name: 'Face2Face',
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          position: formData.position,
+          message: `
+Новая регистрация на вебинар:
+
+ФИО: ${formData.fullName}
+Компания: ${formData.company}
+Должность: ${formData.position}
+Телефон: ${formData.phone}
+Email: ${formData.email}
+
+Согласие на обработку данных: Да
+Согласие с политикой конфиденциальности: Да
+          `.trim()
+        }),
+      });
+
+      if (response.ok) {
+        setFormData({
+          fullName: '',
+          company: '',
+          position: '',
+          phone: '',
+          email: '',
+          privacyConsent: false,
+          dataProcessingConsent: false
+        });
+        setShowThanks(true);
+      } else {
+        throw new Error('Ошибка отправки формы');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitError('Произошла ошибка при отправке формы. Попробуйте еще раз.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -70,7 +118,43 @@ const RegistrationSection = () => {
                 />
               </div>
 
-              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                  <Building className="w-4 h-4 inline mr-2" />
+                  Наименование компании *
+                </label>
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
+                  required
+                  onInvalid={(e)=> e.currentTarget.setCustomValidity('Пожалуйста, укажите название компании')}
+                  onInput={(e)=> e.currentTarget.setCustomValidity('')}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                  placeholder="Название вашей компании"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                  <Briefcase className="w-4 h-4 inline mr-2" />
+                  Должность *
+                </label>
+                <input
+                  type="text"
+                  name="position"
+                  value={formData.position}
+                  onChange={handleInputChange}
+                  required
+                  onInvalid={(e)=> e.currentTarget.setCustomValidity('Пожалуйста, укажите вашу должность')}
+                  onInput={(e)=> e.currentTarget.setCustomValidity('')}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-400 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                  placeholder="Ваша должность"
+                />
+              </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
@@ -147,6 +231,12 @@ const RegistrationSection = () => {
               </label>
             </div>
 
+            {submitError && (
+              <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                <p className="text-red-600 dark:text-red-400 text-sm">{submitError}</p>
+              </div>
+            )}
+
             <button
               type="submit"
               disabled={submitting}
@@ -154,8 +244,6 @@ const RegistrationSection = () => {
             >
               {submitting ? 'Отправка…' : 'Зарегистрироваться бесплатно'}
             </button>
-
-            {/* Ошибки отправки отсутствуют в текущей интеграции */}
           </form>
         </div>
 
@@ -220,15 +308,11 @@ const RegistrationSection = () => {
               </a>
             </div>
 
-            
-
             <p className="text-sm text-gray-600 dark:text-gray-300">
               Если письма всё{'\u00A0'}ещё нет — напишите нам:
               <br />
               <a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">t.me</a>
             </p>
-
-            
           </div>
         </div>
       </div>
