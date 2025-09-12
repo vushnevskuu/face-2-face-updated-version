@@ -260,7 +260,7 @@ Email: ${formData.email}
     {(showThanks || submitError) && (
       <div
         className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-        onClick={() => setShowThanks(false)}
+        onClick={() => { setShowThanks(false); setSubmitError(''); }}
         aria-modal
         role="dialog"
       >
@@ -271,7 +271,7 @@ Email: ${formData.email}
           <button
             aria-label="Закрыть"
             className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
-            onClick={() => setShowThanks(false)}
+            onClick={() => { setShowThanks(false); setSubmitError(''); }}
           >
             <X className="w-5 h-5" />
           </button>
