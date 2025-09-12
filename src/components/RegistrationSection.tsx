@@ -79,6 +79,7 @@ Email: ${formData.email}
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitError('Произошла ошибка при отправке формы. Попробуйте еще раз.');
+      setShowThanks(true);
     } finally {
       setSubmitting(false);
     }
@@ -256,7 +257,7 @@ Email: ${formData.email}
     </section>
     
     {/* Thank you modal */}
-    {showThanks && (
+    {(showThanks || submitError) && (
       <div
         className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
         onClick={() => setShowThanks(false)}
@@ -279,9 +280,12 @@ Email: ${formData.email}
             <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-green-600 text-white">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="text-[22px] md:text-3xl font-bold leading-tight text-black dark:text-white mb-4">
-              Подтвердите регистрацию — получите ссылку на{'\u00A0'}трансляцию
+            <h3 className="text-[22px] md:text-3xl font-bold leading-tight text-black dark:text-white mb-2">
+              {submitError ? 'Заявка сохранена локально' : 'Подтвердите регистрацию — получите ссылку на\u00A0трансляцию'}
             </h3>
+            {submitError && (
+              <p className="mb-3 text-sm text-red-600 dark:text-red-400">{submitError}</p>
+            )}
 
             {/* hint about mail folders - moved above green text */}
             <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-4">
