@@ -54,7 +54,7 @@ const ProgramSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElemen
           <h2 className="text-[28px] md:text-4xl font-bold text-black dark:text-white mb-4">
             Программа вебинара
           </h2>
-          <p className="text-[18px] md:text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-[16px] leading-tight md:text-xl md:leading-normal text-gray-600 dark:text-gray-300">
             Подробный план мероприятия <br className="md:hidden" />с практическими заданиями
           </p>
         </div>
@@ -71,7 +71,13 @@ const ProgramSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElemen
                   onClick={() => setOpen(!open)}
                   className="w-full text-left p-4 md:p-6 pl-6 md:pl-8 flex items-center justify-between"
                 >
-                  <span className="text-[18px] md:text-2xl font-bold text-black dark:text-white">Часть {index + 1}. {part.title}</span>
+                  <span className="text-[18px] md:text-2xl font-bold text-black dark:text-white">
+                    {`Часть ${index + 1}. `}
+                    {part.title
+                      .replaceAll(' и ', ' и\u00A0')
+                      .replaceAll(' в ', ' в\u00A0')
+                      .replaceAll(' на ', ' на\u00A0')}
+                  </span>
                   <span className="ml-4 text-gray-500 group-hover:text-gray-700">{open ? '−' : '+'}</span>
                 </button>
                 {open && (
