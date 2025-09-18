@@ -3,7 +3,7 @@ import CountdownTimer from './CountdownTimer';
 
 const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) => void }) => {
   return (
-    <section className="relative bg-white dark:bg-gray-950 py-8 md:py-10 lg:py-24">
+    <section className="relative bg-white dark:bg-gray-950 py-6 md:py-8 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-11 items-center">
           {/* Left side - Content (top on mobile) */}
@@ -13,7 +13,7 @@ const HeroSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) 
               <span className="block">построить личный бренд</span>
               <span className="block">и монетизировать знания</span>
             </h1>
-            <p className="text-[18px] md:text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-8 leading-[1.3]">
+            <p className="text-[18px] md:text-[18px] text-gray-600 dark:text-gray-300 mb-6 md:mb-8 leading-[1.3]">
               Практические лайфхаки 2025
             </p>
 

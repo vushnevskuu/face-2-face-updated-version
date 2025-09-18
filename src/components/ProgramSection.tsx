@@ -48,13 +48,13 @@ const programParts = [
 
 const ProgramSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElement) => void }) => {
   return (
-    <section className="py-8 md:py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-6 md:py-16 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-6 md:mb-16">
+        <div className="text-center mb-5 md:mb-12">
           <h2 className="text-[28px] md:text-4xl font-bold text-black dark:text-white mb-4">
             Программа вебинара
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-[18px] text-gray-600 dark:text-gray-300">
             Подробный план мероприятия <br className="md:hidden" />с практическими заданиями
           </p>
         </div>
@@ -91,7 +91,7 @@ const ProgramSection = ({ onRegisterClick }: { onRegisterClick?: (el: HTMLElemen
           })}
         </div>
 
-        <div className="text-center mt-8 md:mt-12">
+        <div className="text-center mt-6 md:mt-10">
           <button onClick={(e) => onRegisterClick?.(e.currentTarget)} className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
             Присоединиться бесплатно
           </button>

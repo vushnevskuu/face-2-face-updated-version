@@ -36,9 +36,9 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section className="py-8 md:py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-6 md:py-16 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-6 md:mb-16">
+        <div className="text-center mb-5 md:mb-12">
           <h2 className="text-[28px] md:text-4xl font-bold text-black dark:text-white mb-4">
             На вебинаре узнаете:
           </h2>
@@ -60,7 +60,7 @@ const BenefitsSection = () => {
                   <IconComponent className="w-8 h-8" />
                 </div>
                 
-                <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-3 md:mb-4">
+                <h3 className="text-lg md:text-[18px] font-bold text-black dark:text-white mb-3 md:mb-4">
                   {benefit.title}
                 </h3>
                 

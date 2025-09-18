@@ -50,13 +50,13 @@ const speakers = [
 
 const SpeakersSection = () => {
   return (
-    <section className="py-12 md:py-20 bg-white dark:bg-gray-900">
+    <section className="py-8 md:py-16 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-16">
+        <div className="text-center mb-6 md:mb-12">
           <h2 className="text-[28px] md:text-4xl font-bold text-black dark:text-white mb-4">
             Спикеры вебинара
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-[18px] text-gray-600 dark:text-gray-300">
             Эксперты <br className="md:hidden" />с многолетним опытом <br className="md:hidden" />в психологии и бизнесе
           </p>
         </div>

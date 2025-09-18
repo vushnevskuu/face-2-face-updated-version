@@ -87,13 +87,13 @@ Email: ${formData.email}
 
   return (
     <>
-    <section className="py-8 md:py-20 bg-black text-white dark:bg-black">
+    <section className="py-6 md:py-16 bg-black text-white dark:bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-16">
+        <div className="text-center mb-6 md:mb-12">
           <h2 className="text-[28px] md:text-4xl font-bold mb-4">
             Регистрация на вебинар
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-[18px] text-gray-300">
             Заполните форму и получите доступ к эксклюзивным материалам
           </p>
         </div>
@@ -296,7 +296,7 @@ Email: ${formData.email}
               </p>
             </div>
 
-            <p className="text-[20px] md:text-[22px] font-normal text-green-500 mb-4 leading-snug">
+            <p className="text-[18px] md:text-[20px] font-normal text-green-500 mb-4 leading-snug">
               Чтобы не потерять ссылку, подключите Telegram‑бота.
               <br />Он пришлёт доступ и{'\u00A0'}запись.
             </p>
